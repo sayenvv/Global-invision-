@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+{% block title %}add contact{% endblock title %}
+{% block content %}
+<div class="row tm-mt-big">
+    <div class="col-xl-8 col-lg-10 col-md-12 col-sm-12">
+        <div class="bg-white tm-block">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="tm-block-title d-inline-block">Add New Contact</h2>
+                </div>
+            </div>
+            <div class="row mt-4 tm-edit-product-row">
+                <div class="col-12">
+                    <form action="{% url 'add_contact' %}" method="post" class="tm-edit-product-form">
+                        {% csrf_token %}
+                        <div class="input-group mb-3">
+                            <label for="name" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Contact
+                                Name
+                            </label>
+                            {{form.name}}
+                        </div>
+                        <div class="input-group mb-3">
+                            <label for="name" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Phone
+                                Number
+                            </label>
+                            {{form.phone}}
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="ml-auto col-xl-8 col-lg-8 col-md-8 col-sm-7 pl-0">
+                                <a href="{% url 'contact_book' %}" class="btn btn-danger btn-sm">Back</a>
+                                <button type="submit" class="btn btn-primary btn-sm">Add
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

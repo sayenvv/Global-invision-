@@ -1,0 +1,38 @@
+{% extends 'main.html' %}
+{% block title %}view contact{% endblock title %}
+{% block content %}
+<div class="row tm-mt-big">
+    <div class="col-xl-8 col-lg-10 col-md-12 col-sm-12">
+        <div class="bg-white tm-block">
+            <div class="row">   
+                <div class="col-12">
+                    <h2 class="tm-block-title d-inline-block">Contact Details of {{contact_instance.first.name}}</h2>
+                </div>
+            </div>
+            <div class="row mt-4 tm-edit-product-row">
+                <div class="col-12">
+                        <div class="input-group mb-3">
+                            <label for="name" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Contact
+                                Name
+                            </label>
+                            {{contact_instance.first.name}}
+                        </div>
+                        <div class="input-group mb-3">
+                            <label for="name" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Phone
+                                Number
+                            </label>
+                            {{contact_instance.first.phone}}
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <div class="ml-auto col-xl-8 col-lg-8 col-md-8 col-sm-7 pl-0">
+                                <a href="{% url 'contact_book' %}" class="btn btn-danger btn-sm">Back</a>
+                            </div>
+                        </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
